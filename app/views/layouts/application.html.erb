@@ -10,6 +10,54 @@
   </head>
 
   <body>
+
+    <header>
+      <div class="conatainer">
+        <div class="row">
+          <nav class="nav navbar-nav navbar-left"><span>Bookers</span></nav>
+        </div>
+        <nav class="row">
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to "Home", "#"%>
+              </li>
+              <li>
+                <%= link_to "Users", "#" %>
+              </li>
+              <li>
+                <%= link_to "Books", "#" %>
+              </li>
+              <li>
+                <%= link_to "logout", "#" %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to "Home", "#", class: "glyphicon glyphicon-home home" %>
+              </li>
+              <li>
+                <%= link_to "About", "#", class: "glyphicon glyphicon-link about" %>
+              </li>
+              <li>
+                <%= link_to "sign up", "#", class: "glyphicon glyphicon-edit sign_up" %>
+              </li>
+              <li>
+                <%= link_to "login", "#", class: "glyphicon glyphicon-log-in sign_in" %>
+              </li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+
     <%= yield %>
+
+    </div>
+
+    <footer>
+      <p>CopyRight Infratop.inc</p>
+    </footer>
   </body>
 </html>

@@ -1,0 +1,36 @@
+<div class="col-xs-3">
+	<h2>User info</h2>
+	<table class="table">
+		<tbody>
+			<tr>
+				<th></th>
+				<th></th>
+			</tr>
+			<tr>
+				<th>name</th>
+				<th></th>
+			</tr>
+			<tr>
+				<th>introducion</th>
+				<th></th>
+			</tr>
+		</tbody>
+	</table>
+	<div class="row">
+		<a href="#" class="col-xs-12 btn btn-default glyphicon glyphicon-wrench"></a>
+	</div>
+	<h2>New book</h2>
+	<%= form_for(book) do |f| %>
+		<div class="field row">
+			<label for="book_title">Title</label>
+			<%= f.text_field :title, class: "col-xs-12 book_title" %>
+		</div>
+		<div class="field row">
+			<label for="book_opinion">Opinion</label>
+			<%= f.text_area :body, class: "col-xs-12 book_body" %>
+		</div>
+		<div class="row">
+			<%= f.submit "Create Book", class: "btn btn-primary col-xs-12" %>
+		</div>
+	<% end %>
+</div>

@@ -1,5 +1,17 @@
 <div class="container">
-	<p id="notice"></p>
+	<p id="notice"><%= notice %></p>
+
+	<% if @user.errors.any? %>
+	<div id="eroor_explanation">
+		<h2><%= @user.errors.count %>errors prohibited this obj from being saved:</h2>
+		<ul>
+			<%= @user.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
+
 	<h2>User info</h2>
 	<%= form_for(@user) do |f| %>
 		<div class="field">
@@ -8,6 +20,7 @@
 		</div>
 		<div class="field">
 			<label for="user_image">Image</label>
+			<%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
 		</div>
 		<div class="field">
 			<label for="user_introduction">Introduction</label>
